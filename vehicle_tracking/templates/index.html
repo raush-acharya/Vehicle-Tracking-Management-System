@@ -7,33 +7,19 @@
     <title>RENTR: Vehicle Tracking</title>
 </head>
 <body>  
-<div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <img src="/static/Logo.svg" alt="">
-                <span class="title">RENTR</span>
+    <div class="container">
+            {% include "navbar.html" %}
+            <div class="main">
+                <div class="left">
+                    <p><span class="mainTitle">Welcome to</span> <span class="logoTitle title">RENTR</span><br><span class="small">Your trusted partner in<br>adventure!</span></p>
+                    <hr>
+                    <p class="subtitle">Whether you're planning a weekend getaway, a family vacation, or a<br>business trip, we've got the perfect vehicle to suit your needs.</p>
+                    <button class="signup">Get Started Now</button>
+                </div>
+                <div class="right">
+                    <img src="../static/Dashboard.png" class="dashboardImg">
+                </div>
             </div>
-            <div class="navigation">
-                <a href="">Home</a>
-                <a href="">Features</a>
-                <a href="">About Us</a>
-            </div>
-            <div class="buttons">
-                <a href="" class="login">LogIn</a>
-                <button class="signup" type="submit">SignUp</button>
-            </div>
-        </div>
-        <div class="main">
-            <div class="left">
-                <p><span class="mainTitle">Welcome to</span> <span class="logoTitle title">RENTR</span><br><span class="small">Your trusted partner in<br>adventure!</span></p>
-                <hr>
-                <p class="subtitle">Whether you're planning a weekend getaway, a family vacation, or a<br>business trip, we've got the perfect vehicle to suit your needs.</p>
-                <button class="signup">Get Started Now</button>
-            </div>
-            <div class="right">
-                <img src="../static/Dashboard.png" class="dashboardImg">
-            </div>
-        </div>
-</div>
+    </div>
 </body>
 </html>

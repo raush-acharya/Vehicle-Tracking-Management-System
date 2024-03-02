@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @font-face {
     font-family: 'Ethnocentric';
-    src: url('/vehicle_tracking/static/ethnocentric.otf');
+    src: url('../static/ethnocentric.otf');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'The Bold Font';
-    src: url('/vehicle_tracking/static/THEBOLDFONT.otf');
+    src: url('../static/THEBOLDFONT.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -20,7 +20,12 @@
 
 .container{
     height: 100vh;
-    background: var(--Main-Background, linear-gradient(117deg, #9BAFD9 0%, #FFF 35.76%, #FFF 68.1%, #416CBF 100%));}
+    background: var(--Main-Background, linear-gradient(117deg, #9BAFD9 0%, #FFF 35.76%, #FFF 68.1%, #416CBF 100%));
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
 
 .navbar{
     padding: 20px 70px;
@@ -99,7 +104,7 @@ a{
     height: 40px;
     padding: 0px 25px;
     color: #FFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     font-family: Allerta;
     font-size: 17px;
     font-style: normal;
@@ -109,7 +114,7 @@ a{
     border: none;
     border-radius: 5px;
     background: #103783;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset; */
 }
 
 hr{
@@ -126,6 +131,8 @@ hr{
 
 .main{
     height: 80vh;
+    width: 80vw;
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -135,12 +142,23 @@ hr{
 .left{
     display: flex;
     flex-direction: column;
-    height: 40vh;
+    /* height: 40vh; */
+    column-gap: 1.5rem;
     justify-content: space-evenly;
+}
+
+.left p, .left hr{
+    margin-bottom: 1.5rem;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
 }
 
 .dashboardImg{
     width: 42vw;
+    border-radius: 8px;
     align-self: center;
 }
 
@@ -156,3 +174,49 @@ button:active{
     font-size: 20px;
     
 }
+
+.group{
+    display: flex;
+    width: 30vw;
+    justify-content: space-between;
+    flex-shrink: 0;
+    height: max-content;
+    padding: 1rem 0;
+}
+
+.grouptext{
+    width: 25vw;
+}
+
+.grouptitle{
+    color: #103783;
+
+    font-family: Roboto;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.groupsubtitle{
+    font-size: 0.8rem;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+
+
+    border-radius: 8px;
+    background: #103783;
+    box-shadow: 0px 3px 50px 0px rgba(64, 138, 126, 0.10);
+
+    color: #FFF;
+    font-family: The Bold Font;
+    font-size: 1.2rem;
+
+}
+

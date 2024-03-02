@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "main.css" %}">
+    <title>RENTR: Features</title>
+</head>
+<body>
+    <div class="container">
+        {% include "navbar.html" %}
+        <div class="main">
+            <div class="left">
+                <p><span class="small">Our Features</span></p>
+                <p class="subtitle">We provide customers with a wide range of both<br>commercial and luxury vehicles that are<br>customized to meet any preferences or needs they<br>may have.</p>
+                <button class="signup">Get Started Now</button>
+            </div>
+            <div class="right">
+                <div class="group">
+                    <div class="box">1</div>
+                    <div class="grouptext">
+                        <p class="grouptitle">Choose Your Vehicle</p>
+                        <p class="groupsubtitle subtitle">Browse through a wide selection of vehicles and select a preferred one, appropriate for your journey.</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="box">2</div>
+                    <div class="grouptext">
+                        <p class="grouptitle">Make a Booking</p>
+                        <p class="groupsubtitle subtitle">Make a booking hassle free with the easy-to-use app and wait for confirmation call.</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="box">3</div>
+                    <div class="grouptext">
+                        <p class="grouptitle">Pick-Up Location & Date</p>
+                        <p class="groupsubtitle subtitle">Select the location and date of your convenience to pick-up and drop the vehicle.</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="box">4</div>
+                    <div class="grouptext">
+                        <p class="grouptitle">Enjoy your Ride</p>
+                        <p class="groupsubtitle subtitle">Pick-up the car and enjoy your journey with <span>RENTR</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
