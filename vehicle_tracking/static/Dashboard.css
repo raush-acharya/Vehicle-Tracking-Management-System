@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+.container{
+     position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #E8EFFF; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+nav{
+    margin-left: 190px;
+    margin-right: 20px;
+    width: 90%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.navcontent{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.sidebar {
+    width: 190px;
+    height: 1020px; 
+    background-color: #4770C1;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+}
+
+.menu {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+.menu i {
+    font-size: 24px; 
+    margin-bottom: 20px; 
+    color: #FFF; 
+}
+
+.menu-item {
+    height: 150%;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    position: relative;
+}
+
+.menu-item i {
+    font-size: 25px; 
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    color: #FFF; 
+}
+
+.menu-item span {
+    display: block; 
+    text-align: center; 
+    font-size: 14px; 
+    color: #fff; 
+     margin-top: 1px;
+}
+
+.menu-item:hover {
+    background-color: #BDCDEF; /* Change background color on hover */
+}
+
+.menu-item:hover::after {
+    /* content: ''; 
+    position: absolute; 
+    top: 50%; 
+    right: 5px; 
+    transform: translateY(-50%); 
+    border: solid black; 
+    border-width: 0 3px 3px 0; 
+    display: inline-block; 
+    padding: 3px; 
+    transition: transform 0.3s;  */
+    background: #BDCDEF;
+}
+
+.active-menu-item {
+    background: #BDCDEF; /* Change background color */
+    border-right: 4px solid #007bff; /* Add vertical line on the left */
+}
+
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    padding-left: 50px;
+    padding-top: 20px;
+    position: relative; 
+    background-color:#4770C1 ;
+    margin-bottom: 50px; 
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.user:hover .dropdown-content {
+    display: block;
+}
+
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 10px 20px;
+}
+nav ul li a {
+    position: relative;
+    color: #103783;
+    font-weight: bold;
+    padding: 25px 15px;
+    text-align: center; 
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: #0D2D6B;
+}
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #0D2D6B ;
+    transition: 0.3s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.btn{
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: #103783;
+    padding: 10px 30px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.4s ease-in-out;
+    border: 2px solid #103783;
+
+}
+
+.btn.login {
+    background: none;
+    color: #103783;
+    border: none;
+  }
+.btn:hover{
+    background: transparent;
+    color: #333;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    
+  }
+  .notification {
+    position: relative;
+    margin-right: 30px;
+  }
+
+  .notification i {
+    font-size: 32px; 
+  }
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+  .user {
+    position: relative;
+  }
+
+  .user i {
+    font-size: 24px; 
+  }
+  .user-polygon {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent; 
+    border-right: 8px solid transparent; 
+    border-top: 10px solid black; 
+  }
+
+
+.logo{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.logo img{
+    width: 152px;
+    transform: translateY(3px);
+}
+
+.title{
+    color: #103783;
+    font-family: Ethnocentric;
+    font-size: 23px;
+}

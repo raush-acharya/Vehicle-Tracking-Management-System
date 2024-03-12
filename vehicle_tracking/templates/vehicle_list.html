@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles List</title>
+    <script src="https://kit.fontawesome.com/e762c94c99.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/pageformat.css">
+    <link rel="stylesheet" href="/static/Dashboard.css">
+    <style>
+        .vehicle-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .vehicle-card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+{% include "layout.html" %}
+    <div class="mainContent">
+        <form id="sortForm" method="GET" action="{% url 'vehicle_list' %}">
+            <label for="sort_by">Sort by:</label>
+            <select name="sort_by" id="sort_by">
+                <option value="name" {% if sort_by == 'name' %}selected{% endif %}>Name</option>
+                <option value="price" {% if sort_by == 'price' %}selected{% endif %}>Price</option>
+            </select>
+            <button type="submit">Sort</button>
+        </form>
+        <div class="vehicle-cards">
+            {% for vehicle in vehicles_data %}
+            <div class="vehicle-card">
+                <h2>{{ vehicle.vehicles_name }}</h2>
+                <p><strong>Description:</strong> {{ vehicle.vehicles_description }}</p>
+                <p><strong>Seat:</strong> {{ vehicle.vehicles_seat }}</p>
+                <p><strong>Door:</strong> {{ vehicle.vehicles_door }}</p>
+                <p><strong>Luggage:</strong> {{ vehicle.vehicles_luggage }}</p>
+                <p><strong>Price:</strong> {{ vehicle.vehicles_price }}</p>
+                <img src="{{ vehicle.vehicles_image.url }}" alt="{{ vehicle.vehicles_name }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
+# from .forms import ContactForm
+
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+# from .models import ContactMessage
 # Create your views here.
 
 
@@ -43,16 +46,37 @@ def logIn(request):
         user=authenticate(request,username=username,password=pass1)
         if user is not None:
             login(request,user)
-            return redirect('dashboard')
+            return redirect('vehicle_list')
         else:
             return HttpResponse("Username or password is incorrect")
     return render(request, 'login.html')
 
 @login_required(login_url='login')
 def dashBoard(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'vehicle-list.html')
 
 def logOut(request):
     logout(request)
     return redirect('login')
 
+# def contact_view(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             name = form.cleaned_data['name']
+#             email = form.cleaned_data['email']
+#             message = form.cleaned_data['message']
+#             ContactMessage.objects.create(name=name, email=email, message=message)
+#             return redirect('contact')  # Redirect to a success page
+#     else:
+#         user = request.user
+#         form = ContactForm(initial={'name': user.username, 'email': user.email})
+    
+#     return render(request, 'contact.html', {'form': form})
+
+@login_required(login_url='login')
+def history_view(request):
+    return render(request, 'history.html')
+
+def browse_view(request):
+    return render(request, 'browse.html')
