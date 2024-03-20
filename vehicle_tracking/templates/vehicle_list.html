@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicles List</title>
     <script src="https://kit.fontawesome.com/e762c94c99.js" crossorigin="anonymous"></script>
+    <script src="/static/modal.js"></script>
     <link rel="stylesheet" href="/static/pageformat.css">
     <link rel="stylesheet" href="/static/Dashboard.css">
+    <link rel="stylesheet" href="/static/vehicleList.css">
+    <link rel="stylesheet" href="/static/modal.css">
     <style>
         .vehicle-card {
             border: 1px solid #ccc;
@@ -22,6 +25,7 @@
         }
     </style>
 </head>
+
 <body>
 {% include "layout.html" %}
     <div class="mainContent">
@@ -33,19 +37,31 @@
             </select>
             <button type="submit">Sort</button>
         </form>
-        <div class="vehicle-cards">
+        <div class="vehicle-cards" >
             {% for vehicle in vehicles_data %}
-            <div class="vehicle-card">
+            <button class="vehicle-card" data-modal-target="#modal">
+                <div class="image-container" style="background-image: url('{{ vehicle.vehicles_image.url }}');"></div>
                 <h2>{{ vehicle.vehicles_name }}</h2>
-                {% comment %} <p><strong>Description:</strong> {{ vehicle.vehicles_description }}</p> {% endcomment %}
+                <p style="display: none"><strong>Description:</strong> {{ vehicle.vehicles_description }}</p>
                 <p><strong>Seat:</strong> {{ vehicle.vehicles_seat }}</p>
                 <p><strong>Door:</strong> {{ vehicle.vehicles_door }}</p>
                 <p><strong>Luggage:</strong> {{ vehicle.vehicles_luggage }}</p>
                 <p><strong>Price:</strong> {{ vehicle.vehicles_price }}</p>
-                <div class="image-container" style="background-image: url('{{ vehicle.vehicles_image.url }}');"></div>
-            </div>
+            </button>
             {% endfor %}
         </div>
+        <div id="modal" class="modal">
+            <div class="modal-header">
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h2 id="popup-title">{{ vehicle.vehicles_name }}</h2>
+                <p id="popup-description"></p>
+                <p id="popup-price">{{ vehicle.vehicles_price }}</p>
+                <button onclick="bookNow()">Book Now</button>
+            </div>
+        </div>
+        <div id="overlay"></div>
     </div>
 </body>
 </html>

@@ -1,0 +1,7 @@
+.vehicle-card{
+    width: 250px;
+    height: 320px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #9BAFD9;
+}
