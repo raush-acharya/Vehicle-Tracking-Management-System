@@ -4,6 +4,7 @@ from contacts.views import contact
 from vehicles.views import vehicle_list
 
 
+
 urlpatterns = [
     path('', views.homePage, name="home"),
     path('other/', views.otherPage, name="other"),

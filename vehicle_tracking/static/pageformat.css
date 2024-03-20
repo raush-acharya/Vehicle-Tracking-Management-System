@@ -1,3 +1,11 @@
 .mainContent{
     margin-left: 190px;
 }
+
+.image-container {
+    width: 200px; /* Adjust width as needed */
+    height: 120px; /* Adjust height as needed */
+    background-size: cover; /* Scale the image to fit within the container */
+    background-position: center; /* Center the image */
+    overflow: hidden; /* Hide any overflow */
+  }
