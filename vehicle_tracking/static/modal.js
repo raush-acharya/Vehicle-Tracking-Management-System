@@ -45,4 +45,35 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.remove('active');
         overlay.classList.remove('active');
     }
+
+    
 });
+function getCookie(name) {
+    const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return cookieValue ? cookieValue.pop() : '';
+}
+function bookNow() {
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+    const id = document.querySelector('.modal.active').dataset.id;
+
+    // Send the booking request to Django
+    fetch('/bookings/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken') // Ensure you have a function to retrieve CSRF token
+        },
+        body: JSON.stringify({
+            vehicle_id: id,
+            start_date: startDate,
+            end_date: endDate
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Redirect to the confirmation page with the calculated price
+        window.location.href = `/confirmation/?price=${data.price}`;
+    })
+    .catch(error => console.error('Error:', error));
+}  

@@ -24,6 +24,7 @@
             height: auto;
         }
     </style>
+    
 </head>
 
 <body>
@@ -39,7 +40,7 @@
         </form>
         <div class="vehicle-cards" >
             {% for vehicle in vehicles_data %}
-            <button class="vehicle-card" data-modal-target="#modal">
+            <button class="vehicle-card" data-modal-target="#modal" onclick="bookNow('{{ vehicle.id }}')">
                 <div class="image-container" style="background-image: url('{{ vehicle.vehicles_image.url }}');"></div>
                 <h2>{{ vehicle.vehicles_name }}</h2>
                 <p style="display: none"><strong>Description:</strong> {{ vehicle.vehicles_description }}</p>
@@ -58,10 +59,17 @@
                 <h2 id="popup-title">{{ vehicle.vehicles_name }}</h2>
                 <p id="popup-description"></p>
                 <p id="popup-price">{{ vehicle.vehicles_price }}</p>
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date">
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date">
                 <button onclick="bookNow()">Book Now</button>
             </div>
         </div>
         <div id="overlay"></div>
     </div>
+    <script>
+              
+    </script>
 </body>
 </html>
